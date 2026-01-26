@@ -1,47 +1,86 @@
-# Streamlit
- # Streamlit Teaching Material
+# Streamlit Teaching Material
 
- ## Overview
- This repository contains a simple Streamlit application designed to help juniors learn the basics of Streamlit and how to create interactive web applications using Python.
+## Overview
+This repository contains Streamlit teaching materials designed to help juniors learn how to build interactive web applications using Python. The materials include a teaching example (`app.py`) and a hands-on assignment (`Portfolio.py`).
 
- ## Features
- - **User Input**: Allows users to enter their name and age.
- - **Student Management**: Users can add students to a list and view the list of students.
- - **Data Visualization**: Displays a bar chart of subjects and their corresponding marks.
+## Files in this Repository
 
- ## Getting Started
- To run this application locally, follow these steps:
+### 📚 app.py - Teaching Material
+This file demonstrates core Streamlit concepts through four progressive sections:
+- **Section 1: Basic Input** - Text and number input with button submission
+- **Section 2: Static Table** - Displaying hardcoded data in table format
+- **Section 3: Session State** - Persistent data storage across reruns
+- **Section 4: Bar Chart** - Data visualization with charts
 
- 1. **Clone the repository**:
-	 ```bash
-	 git clone https://github.com/Jeremiah-Jefry/Streamlit.git
-	 cd Streamlit
-	 ```
+### 📝 Portfolio.py - Student Assignment
+A simplified student management system where learners apply concepts from `app.py`:
+- Add students with name, roll number, and department
+- View all students in a table
+- Delete students by roll number
+- Uses session_state for data persistence
 
- 2. **Install the required packages**:
-	 Make sure you have Python installed, then run:
-	 ```bash
-	 pip install streamlit pandas
-	 ```
+## Getting Started
 
- 3. **Run the application**:
-	 ```bash
-	 streamlit run app.py
-	 ```
+### Prerequisites
+Make sure you have Python installed on your system.
 
- 4. **Open your browser**:
-	 Navigate to `http://localhost:8501` to view the application.
+### Installation
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Jeremiah-Jefry/Streamlit.git
+   cd Streamlit
+   ```
 
- ## Usage
- - Enter your name and age in the input fields and click the "Submit" button to see your details displayed.
- - Add students to the list and view the updated list.
- - View the bar chart representing marks in different subjects.
+2. **Install required packages**:
+   ```bash
+   pip install streamlit pandas
+   ```
 
- ## Contributing
- Contributions are welcome! Please feel free to submit a pull request or open an issue.
+### Running the Applications
 
- ## License
- This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+**For the teaching material:**
+```bash
+streamlit run app.py
+```
 
- ## Acknowledgments
- - Thanks to the Streamlit community for their support and resources.
+**For the student assignment:**
+```bash
+streamlit run Portfolio.py
+```
+
+Your browser will automatically open to `http://localhost:8501`.
+
+## Learning Path
+
+1. **Start with app.py** - Go through each section to understand:
+   - How to create input fields with unique keys
+   - The difference between local variables and session_state
+   - How to display data in tables and charts
+
+2. **Practice with Portfolio.py** - Apply what you learned:
+   - Build a complete CRUD (Create, Read, Delete) application
+   - Manage persistent data across user interactions
+   - Structure a multi-section Streamlit app
+
+## Key Concepts Covered
+- `st.text_input()` and `st.number_input()` for user input
+- `st.button()` for triggering actions
+- `st.session_state` for maintaining data across reruns
+- `st.table()` and `st.dataframe()` for displaying data
+- `st.bar_chart()` for data visualization
+- Widget keys to avoid duplicate IDs
+
+## Tips for Students
+- Always use unique `key` parameters when you have multiple input widgets of the same type
+- Initialize `session_state` variables before using them
+- Use `st.divider()` to separate different sections visually
+- Test your app frequently as you build to catch errors early
+
+## Contributing
+Contributions are welcome! Please feel free to submit a pull request or open an issue.
+
+## License
+This project is licensed under the MIT License.
+
+## Acknowledgments
+- Thanks to the Streamlit community for their support and resources.
