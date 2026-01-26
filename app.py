@@ -1,56 +1,50 @@
 import streamlit as st
+import pandas as pd
+
 st.title("My First Streamlit App")
 st.write("Hello Streamlit")
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# Section 1: Basic Input
+st.subheader("Section 1: Basic Input")
+name1 = st.text_input("Enter your name", key="name1")
+age1 = st.number_input("Enter your age", min_value=1, key="age1")
+if st.button("Submit", key="btn1"):
+    st.write("Name:", name1)
+    st.write("Age:", age1)
 
-name = st.text_input("Enter your name")
-age = st.number_input("Enter your age")
-if st.button("Submit"):
-    st.write("Name:", name)
-    st.write("Age:", age)
+st.divider()
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # 
-
+# Section 2: Static Table
+st.subheader("Section 2: Static Student Table")
 students = [
     {"name": "Arun", "age": 19},
     {"name": "Vinu", "age": 20}
 ]
-
 st.table(students)
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # 
+st.divider()
 
-name = st.text_input("Enter your name")
-age = st.number_input("Enter your age", min_value=1)
-if "students" not in st.session_state:
-    st.session_state.students = []
-if st.button("Submit"):
-    if name:
-        st.session_state.students.append({"name": name, "age": int(age)})
+# Section 3: Session State (Persistent Data)
+st.subheader("Section 3: Add Students (Persistent)")
+name2 = st.text_input("Enter your name", key="name2")
+age2 = st.number_input("Enter your age", min_value=1, key="age2")
+if "student_list" not in st.session_state:
+    st.session_state.student_list = []
+if st.button("Submit", key="btn2"):
+    if name2:
+        st.session_state.student_list.append({"name": name2, "age": int(age2)})
         st.success("Student added")
     else:
         st.warning("Please enter a name")
-st.table(st.session_state.students)
+st.table(st.session_state.student_list)
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+st.divider()
 
-students = []
-name = st.text_input("Student Name")
-age = st.number_input("Student Age", min_value=1)
-if st.button("Add Student"):
-    students.append({"name": name, "age": age})
-    st.success("Student Added")
-st.write(students)
-
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-
-import pandas as pd
+# Section 4: Bar Chart
+st.subheader("Section 4: Subject Marks")
 data = {
     "Subject": ["Maths", "Physics", "Chemistry"],
     "Marks": [85, 90, 95]
 }
 df = pd.DataFrame(data)
 st.bar_chart(df.set_index("Subject"))
-
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
