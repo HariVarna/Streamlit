@@ -56,3 +56,21 @@ if students:
         st.success("Deleted")
 else:
     st.caption("Add students before trying to delete.")
+
+st.divider()
+
+# Section 4: Statistics
+st.subheader("4. Statistics")
+st.write(f"Total Students: {len(students)}")
+if students:
+    df = pd.DataFrame(students)
+    dept_counts = df['Department'].value_counts()
+    st.bar_chart(dept_counts)
+
+st.divider()
+
+# Section 5: Clear All Students
+st.subheader("5. Clear All Students")
+if st.button("Clear All"):
+    st.session_state.students = []
+    st.success("All students cleared")
