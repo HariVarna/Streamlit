@@ -23,13 +23,16 @@ st.subheader("1.Add Student")
 name = st.text_input("Student Name")
 roll = st.text_input("Roll Number")
 dept = st.text_input("Department (e.g., CSE)")
+blood_group = st.selectbox("Blood Group", ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"])
+class_name = st.text_input("Class")
+mobile = st.text_input("Mobile Number")
 
 if st.button("Add"):
-    if name and roll and dept:
-        students.append({"Name": name, "Roll": roll, "Department": dept})
+    if name and roll and dept and blood_group and class_name and mobile:
+        students.append({"Name": name, "Roll": roll, "Department": dept, "Blood Group": blood_group, "Class": class_name, "Mobile": mobile})
         st.success("Student added")
     else:
-        st.warning("Please fill name, roll, and department")
+        st.warning("Please fill all fields")
 
 st.divider()
 
