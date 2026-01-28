@@ -23,7 +23,7 @@ st.subheader("1.Add Student")
 name = st.text_input("Student Name")
 roll = st.text_input("Roll Number")
 dept = st.text_input("Department (e.g., CSE)")
-blood_group = st.selectbox("Blood Group", ["A+","A1+" "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"])
+blood_group = st.selectbox("Blood Group", ["A+","A1+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"])
 class_name = st.text_input("Class")
 mobile = st.text_input("Mobile Number")
 
